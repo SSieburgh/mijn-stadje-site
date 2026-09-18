@@ -89,13 +89,17 @@
   nav.links a:hover{ color: var(--ink); }
   @media (max-width: 620px){ nav.links{ display: none; } }
 
+  /* ---------- Masthead banner ---------- */
+  .masthead{ line-height: 0; }
+  .masthead img{
+    display: block; width: 100%; height: auto;
+    max-height: 44vh; object-fit: cover;
+  }
+  @media (max-width: 640px){ .masthead img{ max-height: 200px; } }
+
   /* ---------- Hero ---------- */
   .hero .wrap{
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;
-  }
-  @media (max-width: 800px){
-    .hero .wrap{ grid-template-columns: 1fr; }
-    .hero .art{ order: -1; }
+    max-width: 720px; text-align: center;
   }
   .hero h1{
     font-size: clamp(2rem, 1.4rem + 2.6vw, 3.2rem);
@@ -103,9 +107,9 @@
     margin-block: 12px 18px;
   }
   .hero .lede{
-    font-size: 1.08rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 26px;
+    font-size: 1.08rem; color: var(--ink-soft); max-width: 46ch; margin: 0 auto 26px;
   }
-  .cta-row{ display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .cta-row{ display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
   .btn{
     display: inline-flex; align-items: center; gap: 8px;
     padding: 13px 22px; border-radius: 9px; font-weight: 700; font-size: 0.95rem;
@@ -115,25 +119,6 @@
   .btn-primary:hover{ filter: brightness(1.08); }
   .btn-ghost{ color: var(--ink); border-color: var(--line-strong); }
   .btn-ghost:hover{ background: var(--surface); }
-  .hero .art{
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--line);
-  }
-  .hero .art img{
-    display: block;
-    width: 100%; height: 100%;
-    aspect-ratio: 1300 / 866;
-    object-fit: cover;
-  }
-  .hero .art figcaption{
-    position: absolute; left: 0; right: 0; bottom: 0;
-    padding: 10px 14px;
-    font-size: 0.74rem; color: #FBF8F0;
-    background: linear-gradient(0deg, rgba(53,35,28,0.72), transparent);
-  }
 
   /* ---------- Section heads ---------- */
   .section-head{ max-width: 62ch; margin-bottom: 36px; }
@@ -288,10 +273,10 @@
     font-size: 0.78rem; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 8px 18px;
   }
 </style>
+
+
 </head>
 <body>
-
-
 <header class="site">
   <div class="wrap nav-inner">
     <a class="wordmark" href="#top">Mijn<span class="dot">·</span>Stadje</a>
@@ -305,21 +290,19 @@
 </header>
 
 <main id="top">
+  <section class="masthead">
+    <img src="assets/masthead-cities.webp" alt="Illustratie van de skylines van Amsterdam, Utrecht, Den Haag en Rotterdam naast elkaar aan het water, met de titel 'Mijn Stadje' erboven en de ooievaar bij Den Haag">
+  </section>
+
   <section class="hero">
     <div class="wrap">
-      <div class="copy">
-        <span class="eyebrow">Prentenboekserie · één stad per boek</span>
-        <h1>Elke stad verdient een eigen thuiskomstverhaal.</h1>
-        <p class="lede">Noah is vier, nieuwsgierig en een tikkeltje eigenwijs — en hij is de vaste gids die je peuter meeneemt langs de mooiste plekken van zijn eigen stad. Boek 1 speelt in Amsterdam; Utrecht, Rotterdam en Den Haag volgen.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#amsterdam">Ontdek het Amsterdam-boek</a>
-          <a class="btn btn-ghost" href="#waarom">Waarom dit boek</a>
-        </div>
+      <span class="eyebrow">Prentenboekserie · één stad per boek</span>
+      <h1>Elke stad verdient een eigen thuiskomstverhaal.</h1>
+      <p class="lede">Noah is vier, nieuwsgierig en een tikkeltje eigenwijs — en hij is de vaste gids die je peuter meeneemt langs de mooiste plekken van zijn eigen stad. Boek 1 speelt in Amsterdam; Utrecht, Rotterdam en Den Haag volgen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#amsterdam">Ontdek het Amsterdam-boek</a>
+        <a class="btn btn-ghost" href="#waarom">Waarom dit boek</a>
       </div>
-      <figure class="art">
-        <img src="assets/hero-bridge.webp" alt="Noah steekt een Amsterdamse gracht over via een stenen brug, met woonboten, tulpen en een overvliegende ooievaar">
-        <figcaption>Uit het boek: Noah op een van Amsterdams vele bruggetjes</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -409,6 +392,10 @@
         <figure>
           <img src="assets/gallery-bike.webp" alt="Noah fietst langs de gracht, de ooievaar op een fiets ernaast">
           <figcaption>Fietsen langs de gracht</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/hero-bridge.webp" alt="Noah steekt een Amsterdamse gracht over via een stenen brug, met woonboten, tulpen en een overvliegende ooievaar">
+          <figcaption>Over de brug naar huis</figcaption>
         </figure>
         <figure>
           <img src="assets/gallery-cafe.webp" alt="Noah kijkt naar gebak in een etalage, de ooievaar leest de krant op het terras">
